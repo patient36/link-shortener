@@ -17,7 +17,7 @@ This app is built with the following technologies:
 - **Node.js**: Backend server for handling URL shortening and QR code generation.
 - **Express**: Fast and lightweight web framework for building the RESTful API.
 - **TypeScript**: For better code quality, strict typing, and easy-to-manage development.
-- **QRCode package**: To generate QR codes from shortened URLs.
+- **QRCode**: To generate QR codes from shortened URLs.
 - **MongoDB**: For storing the original and shortened links, as well as metadata.
 - **Mongoose**: For interacting with the MongoDB database.
 
