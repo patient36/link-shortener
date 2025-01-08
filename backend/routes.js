@@ -30,9 +30,9 @@ urlRouter.post('/shorten', async (req, res) => {
         if (existing) return res.status(200).json({ url: existing })
 
         const qrCode = await qrcode.toDataURL(original)
-        const short = `${process.env.BASE_URL}${alias}/${nanoid(6)}`
+        const short = `${process.env.BASE_URL}${alias}/${nanoid(10)}`
         const url = new Url({ original, short, qrCode, alias })
-        
+
         await url.save()
         res.status(200).json({ url })
     } catch (error) {
