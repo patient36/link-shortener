@@ -24,7 +24,7 @@ urlRouter.get('/:alias/:short', async (req, res) => {
         if (!url) return res.status(404).json({ error: 'URL not found' });
         url.visits++;
         await url.save();
-        res.status(200).json({ url });
+        res.status(200).redirect(url.original);
     } catch (error) {
         console.error('Error fetching URL:', error);
         res.status(500).json({ error: error.message });
