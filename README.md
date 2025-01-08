@@ -1,4 +1,5 @@
-# Link Shortener with QR Code Generator
+# Tiny Trail
+#### Link Shortener with QR Code Generator
 
 Welcome to the **Link Shortener** app, developed by [Leroy Patient](https://github.com/patient36) ! This project allows you to shorten long URLs and generate a corresponding QR code, making sharing and tracking links more efficient and visually appealing.
 
