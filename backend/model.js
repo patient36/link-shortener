@@ -4,7 +4,8 @@ const urlSchema = mongoose.Schema({
     original: String,
     short: String,
     qrCode: String,
-    alias: String
+    alias: String,
+    visits: Number
 }, {
     timestamps: true
 }
