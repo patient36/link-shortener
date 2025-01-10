@@ -67,4 +67,4 @@ Make sure you have the following installed:
       npm install
       npm run dev
       ```
-5. **You are good to go😉**
+5. **You are good to go😉 Enjoy the app**
