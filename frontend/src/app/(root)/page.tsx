@@ -1,5 +1,4 @@
 "use client";
-import Loader from "../loading";
 const Home = () => {
   return (
     <div>
