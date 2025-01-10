@@ -61,8 +61,7 @@ Make sure you have the following installed:
    npm start
    ```
 
-4. **Start the frontend development server**
-      **Open another terminal**
+4. **Start the frontend development server in a new terminal**
       ```bash
       cd frontend
       npm install
