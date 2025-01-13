@@ -6,8 +6,9 @@ import { nanoid } from "nanoid";
 const urlRouter = express.Router()
 
 urlRouter.get('/', async (req, res) => {
+    // Get top 5 most visited links from our shortened links
     try {
-        const urls = await Url.find().sort({ visits: -1 }).select("short original visits createdAt");
+        const urls = await Url.find().sort({ visits: -1 }).select("short original visits createdAt").limit(5);
         res.status(200).json({ urls });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -26,7 +27,6 @@ urlRouter.get('/:alias/:short', async (req, res) => {
         await url.save();
         res.status(200).redirect(url.original);
     } catch (error) {
-        console.error('Error fetching URL:', error);
         res.status(500).json({ error: error.message });
     }
 });
