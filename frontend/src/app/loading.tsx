@@ -1,6 +1,6 @@
 const Loader = () => {
     return (
-        <div className="w-screen h-screen flex items-center justify-center flex-col bg-transparent backdrop-blur-sm z-0 absolute top-0 ">
+        <div className="w-screen h-screen flex items-center justify-center bg-transparent backdrop-blur-sm z-0 absolute top-0 ">
             <div className="flex items-center justify-center flex-col bg-slate-800 w-60 h-52 rounded-lg text-black">
                 <div id="wifi-loader">
                     <svg viewBox="0 0 86 86" className="circle-outer">
