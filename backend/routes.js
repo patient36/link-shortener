@@ -9,7 +9,8 @@ urlRouter.get('/', async (req, res) => {
     // Get top 5 most visited links from our shortened links
     try {
         const urls = await Url.find().sort({ visits: -1 }).select("short original visits createdAt").limit(5);
-        res.status(200).json({ urls });
+        const metadata = urls.length > 0 ? `${urls.length} most visited link${urls.length > 1 ? 's' : ''}` : 'no links found'
+        res.status(200).json({ metadata, urls });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
