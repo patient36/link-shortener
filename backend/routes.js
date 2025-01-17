@@ -56,7 +56,7 @@ urlRouter.post('/shorten', async (req, res) => {
         const original = req.body.original
         const sentAlias = req.body.alias || "url"
         const alias = sentAlias.trim().toLowerCase().replace(/\s+/g, '-')
-        if (!isValidUrl(original)) return res.status(400).json({ message: "Broken URL" })
+        if (!isValidUrl(original)) return res.status(400).json({ message: "Unable to shorten a broken URL. Check the URL and try again later." })
 
         const existing = await Url.findOne({ original, alias })
         if (existing) return res.status(200).json({ url: existing })
