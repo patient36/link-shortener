@@ -44,9 +44,9 @@ const isValidUrl = (url) => {
             return false;
         }
 
-        return true; 
+        return true;
     } catch {
-        return false; 
+        return false;
     }
 };
 
@@ -54,9 +54,9 @@ const isValidUrl = (url) => {
 urlRouter.post('/shorten', async (req, res) => {
     try {
         const original = req.body.original
-        const alias = req.body.alias || "url"
-
-        if (!isValidUrl(original)) return res.status(400).json({ message: "Invalid URL" })
+        const sentAlias = req.body.alias || "url"
+        const alias = sentAlias.trim().toLowerCase().replace(/\s+/g, '-')
+        if (!isValidUrl(original)) return res.status(400).json({ message: "Broken URL" })
 
         const existing = await Url.findOne({ original, alias })
         if (existing) return res.status(200).json({ url: existing })
