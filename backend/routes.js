@@ -32,19 +32,38 @@ urlRouter.get('/:alias/:short', async (req, res) => {
     }
 });
 
+const isValidUrl = (url) => {
+    try {
+        const parsedUrl = new URL(url);
+
+        if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+            return false;
+        }
+
+        if (parsedUrl.hostname === "localhost") {
+            return false;
+        }
+
+        return true; 
+    } catch {
+        return false; 
+    }
+};
+
 
 urlRouter.post('/shorten', async (req, res) => {
     try {
         const original = req.body.original
         const alias = req.body.alias || "url"
-        const visits = 0
+
+        if (!isValidUrl(original)) return res.status(400).json({ message: "Invalid URL" })
 
         const existing = await Url.findOne({ original, alias })
         if (existing) return res.status(200).json({ url: existing })
 
         const qrCode = await qrcode.toDataURL(original)
         const short = `${process.env.BASE_URL}${alias}/${nanoid(10)}`
-        const url = new Url({ original, short, qrCode, alias, visits })
+        const url = new Url({ original, short, qrCode, alias })
 
         await url.save()
         res.status(200).json({ url })
