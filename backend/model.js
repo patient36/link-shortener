@@ -5,7 +5,7 @@ const urlSchema = mongoose.Schema({
     short: String,
     qrCode: String,
     alias: String,
-    visits: Number
+    visits: { type: Number, default: 0 }
 }, {
     timestamps: true
 }
