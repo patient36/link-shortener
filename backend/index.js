@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 app.use('/', urlRouter)
 
-mongoose.connect(process.env.ATLAS_DB_CONN_STR)
+mongoose.connect(process.env.DB_CONN_STR)
     .then(() => {
         console.log("Connected to database")
         app.listen(process.env.PORT, () => {
