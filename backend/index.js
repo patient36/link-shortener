@@ -10,12 +10,13 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 app.use('/', urlRouter)
+const PORT  = process.env.PORT || 5000
 
 mongoose.connect(process.env.DB_CONN_STR)
     .then(() => {
         console.log("Connected to database")
-        app.listen(process.env.PORT, () => {
-            console.log(`Server is up and running on port ${process.env.PORT}`)
+        app.listen(PORT, () => {
+            console.log(`Server is up and running on port ${PORT}`)
         })
     }).catch(err => {
         console.log(err)
