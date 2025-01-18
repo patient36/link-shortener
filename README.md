@@ -1,4 +1,5 @@
 # Tiny Trail
+
 #### Link Shortener with QR Code Generator
 
 Welcome to the **Link Shortener** app, developed by [Leroy Patient](https://github.com/patient36) ! This project allows you to shorten long URLs and generate a corresponding QR code, making sharing and tracking links more efficient and visually appealing.
@@ -17,6 +18,8 @@ This app is built with the following technologies:
 - **Node.js**: Backend server for handling URL shortening and QR code generation.
 - **Express**: Fast and lightweight web framework for building the RESTful API.
 - **TypeScript**: For better code quality, strict typing, and easy-to-manage development.
+- **NextJS**: For fast rendering and clean flow of code.
+- **TailwindCSS**: For styling the pages.
 - **QRCode**: To generate QR codes from shortened URLs.
 - **MongoDB**: For storing the original and shortened links, as well as metadata.
 - **Mongoose**: For interacting with the MongoDB database.
@@ -42,14 +45,14 @@ Make sure you have the following installed:
    cd link-shortener
    ```
 
-2. **Create a .env file for storing env variables**
+2. **Create a .env file for storing env variables in the backend folder**
 
-   ### .env example
+   ### Backend .env example
 
    ```
    PORT = <your desired backend port>
    DB_CONN_STR = <your mongodb connection string>
-   BASE_URL = <base url for the generated links>
+   BASE_URL = <your backend server full url(eg: http://localhost:5000/)>
 
    ```
 
@@ -61,10 +64,19 @@ Make sure you have the following installed:
    npm start
    ```
 
-4. **Start the frontend development server in a new terminal**
-      ```bash
-      cd frontend
-      npm install
-      npm run dev
-      ```
-5. **You are good to go😉 Enjoy the app**
+4. **Create a .env file for storing env variables in the frontend folder**
+
+   ### Frontend .env example
+
+   ```
+   NEXT_PUBLIC_API = <your backend API route(eg: http://localhost:5000)>
+
+   ```
+
+5. **Start the frontend development server in a new terminal**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+6. **You are good to go😉 Enjoy the app**
