@@ -55,6 +55,7 @@ const useShortenUrl = () => {
       }
     } catch (err) {
       setError("Something went wrong. Please try again!");
+      console.error(err)
     }
   };
 

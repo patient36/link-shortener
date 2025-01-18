@@ -1,6 +1,6 @@
 "use client"
 
-export default function ErrorBoundary({ error, reset }: { error: Error, reset: () => void }) {
+export default function ErrorBoundary({ reset }: {  reset: () => void }) {
     return (
         <div className="w-screen h-screen flex items-center justify-center bg-transparent backdrop-blur-sm z-0 absolute top-0 ">
 
