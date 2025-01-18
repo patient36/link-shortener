@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: { default: "Tiny Trailz", template: 'Tiny Trailz • %s' },
   description: "Link shortening service and QR code generator",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

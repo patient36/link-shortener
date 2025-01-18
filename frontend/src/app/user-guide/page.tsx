@@ -1,64 +1,94 @@
-import Link from "next/link"
+import Link from "next/link";
+import { FaEnvelope, FaWhatsapp, FaTelegramPlane, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export const metadata = {
-    title: " User guide "
-}
+    title: "User Guide",
+};
 
 const UserGuide = async () => {
+    const contacts = [
+        { id: 1, href: '/', icon: <FaEnvelope className="text-red-500 text-2xl" />, text: 'Email' },
+        { id: 2, href: '/', icon: <FaTelegramPlane className="text-blue-400 text-2xl" />, text: 'Telegram' },
+        { id: 3, href: '/', icon: <FaWhatsapp className="text-green-500 text-2xl" />, text: 'WhatsApp' },
+        { id: 4, href: '/', icon: <FaLinkedin className="text-blue-700 text-2xl" />, text: 'LinkedIn' },
+        { id: 5, href: '/', icon: <FaGithub className="text-black text-2xl" />, text: 'GitHub' },
+    ]
     return (
-        <div className="bg-white text-black h-full p-4 overflow-auto scrollbar-none">
-            <h1 className="text-3xl font-bold mt-5 mb-10 text-center">Get started with Tiny trailz 💡!</h1>
-            {/* container */}
-            <div>
-                <div className="p-3 mb-5 rounded-md bg-slate-300 transition-all cursor-pointer bg-opacity-20 hover:bg-opacity-80 ">
-                    <p className="font-bold text-xl mb-2">What is this ?</p>
+        <div className="h-full bg-gradient-to-b from-blue-50 via-purple-300 to-white text-gray-800 p-6 overflow-auto scrollbar-none">
+            <div className="max-w-4xl mx-auto">
+                <header className="text-center max-sm:text-left py-8">
+                    <h1 className="text-5xl font-extrabold text-blue-600 mb-6">
+                        Get  to know <span className="text-green-500">Tiny Trailz</span> 🚀
+                    </h1>
+                    <p className="text-lg text-gray-600">
+                        Your ultimate platform for creating short, shareable links with ease.
+                    </p>
+                </header>
 
-                    <div className="p-2 my-3 ">
-                        First things first,
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">Tiny trailz</span>  is a platform that
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">provides a better option</span> for sharing data through links. We collect a really
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">long link</span> from you, which you surely need but not that long and we help you get
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">a better version</span> of it. We encourage you to
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">use this service</span> for really long links and enjoy your new short
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">links registered under your custom domain.
-                        </span>
-                    </div>
-                </div>
-                <div className="p-3 mb-5 rounded-md bg-slate-300 transition-all cursor-pointer bg-opacity-20 hover:bg-opacity-80 ">
-                    <p className="font-bold text-xl mb-2">How does it work ?</p>
+                {/* Main Content */}
+                <main className="space-y-12">
+                    {/* Section: What is this? */}
+                    <section className="bg-white rounded-lg shadow-lg p-8">
+                        <h2 className="text-3xl font-semibold text-blue-500 mb-4">What is Tiny Trailz?</h2>
+                        <p className="text-gray-700 leading-relaxed">
+                            Tiny Trailz is a platform designed to simplify your link-sharing experience. We take your long, unwieldy URLs and transform them into sleek, manageable links that can be customized to match your brand. Say goodbye to cluttered links and hello to elegance!
+                        </p>
+                    </section>
 
-                    <div className="p-2 my-3 ">
-                        Your link is safe with us,
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">Tiny trailz</span>  stores your link for you and
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">provides a short one</span> to be using for your own.
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all"> Your long link</span> is transformed into
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">a shorter version</span>.And in addition  you can either
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">get a short vesion</span> of it or a
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all"> QR code</span> or simply
-                        <span className="font-bold underline mx-2 hover:text-green-500 transition-all">get them both</span>, it's up to you to choose!
-                    </div>
-                    <Link
-                        className="bg-blue-400 text-white font-bold px-5 py-2 rounded-md"
-                        href={"/services"}>
-                        Try it out 😉
-                    </Link>
-                </div>
-                <div className="p-3 mb-5 rounded-md bg-slate-300 transition-all cursor-pointer bg-opacity-20 hover:bg-opacity-80 ">
-                    <p className="font-bold text-xl mb-2">Contact us</p>
+                    {/* Section: How does it work? */}
+                    <section className="bg-white rounded-lg shadow-lg p-8">
+                        <h2 className="text-3xl font-semibold text-blue-500 mb-4">How Does It Work?</h2>
+                        <ol className="list-decimal list-inside text-gray-700 leading-relaxed space-y-3 ">
+                            <li className="hover:translate-x-1 cursor-pointer transition-all">
+                                Provide us with your long URL, and we’ll generate a short, customized link for you.
+                            </li>
+                            <li className="hover:translate-x-1 cursor-pointer transition-all">
+                                For the sake of getting a shorter link we recommend using a short and easy to remember custom domain.
+                            </li>
+                            <li className="hover:translate-x-1 cursor-pointer transition-all">
+                                Optionally, download a QR code for your link to make sharing even easier.
+                            </li>
+                            <li className="hover:translate-x-1 cursor-pointer transition-all">
+                                Enjoy your new short customised link and use it as you wish!
+                            </li>
+                        </ol>
+                        <div className="mt-6">
+                            <Link
+                                className="inline-block bg-green-500 text-white font-bold px-6 py-3 rounded-md shadow-md hover:bg-green-600 transition-all"
+                                href="/services"
+                            >
+                                Get Started Now
+                            </Link>
+                        </div>
+                    </section>
 
-                    <div className="p-2 my-3 ">
-                        <ul>
-                            <li>Instagram</li>
-                            <li>Facebook</li>
-                            <li>Twitter/X</li>
-                            <li>Gmail</li>
-                            <li>WhatsApp</li>
-                        </ul>
-                    </div>
-                </div>
+                    {/* Section: Contacts */}
+                    <section className="bg-white rounded-lg shadow-lg p-8">
+                        <h2 className="text-3xl font-semibold text-blue-500 mb-4">Contact the Developer</h2>
+                        <p className="text-gray-700 mb-4">
+                            Have questions or need help? Reach out to the developer through any of the following channels:
+                        </p>
+                        <div className="grid grid-cols-2 gap-4">
+                            {contacts.map(contact => (
+                                <Link
+                                    key={contact.id}
+                                    href={contact.href}
+                                    className="flex items-center space-x-3 cursor-pointer hover:translate-y-1 transition-all">
+                                    {contact.icon}
+                                    <span>{contact.text}</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </section>
+                </main>
+
+                {/* Footer */}
+                <footer className="text-center py-6 mt-12 text-gray-500 text-sm">
+                    &copy; {new Date().getFullYear()} Tiny Trailz. All rights reserved.
+                </footer>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default UserGuide
+export default UserGuide;

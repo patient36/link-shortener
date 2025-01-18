@@ -6,7 +6,7 @@ export default function ErrorBoundary({ error, reset }: { error: Error, reset: (
 
             <div className="flex items-center justify-center gap-4 flex-col bg-slate-800 w-80 h-52 rounded-lg text-black">
                 <p className="text-white font-semibold capitalize p-2"
-                >{error.message}</p>
+                >Something went wrong</p>
                 <button className="bg-blue-400 text-white font-bold px-5 py-2 rounded-md" onClick={reset}>Try again</button>
             </div>
 
