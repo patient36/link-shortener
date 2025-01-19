@@ -29,9 +29,11 @@ const Service: React.FC = () => {
 
     const handleDownloadQrCode = (): void => {
         if (result?.qrCode) {
+            const date = new Date()
+            const now = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}-${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}-${date.getMilliseconds()}`
             const link = document.createElement("a");
             link.href = result.qrCode;
-            link.download = "qr-code.png";
+            link.download = `qr-code-${now}.png`;
             link.click();
             setStatus((prev) => ({ ...prev, download: "Downloaded!" }));
         }

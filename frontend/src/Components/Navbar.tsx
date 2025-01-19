@@ -12,7 +12,7 @@ const Navbar = () => {
     const navItems = [
         { id: 1, navlink: "Home", icon: <FaHome />, href: "/" },
         { id: 2, navlink: "Services", icon: <FaGear />, href: "/services" },
-        { id: 3, navlink: "User Guide", icon: <FaBookOpenReader />, href: "/user-guide" },
+        { id: 3, navlink: "Documentation", icon: <FaBookOpenReader />, href: "/docs" },
     ];
     const route = usePathname()
     useEffect(() => setActive(route), [route])
