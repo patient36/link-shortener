@@ -15,7 +15,9 @@ const NotFound = () => {
                 >4</div>
             </div>
             <div className='text-white flex items-center'>
-                <p>Page not found</p>
+                <p
+                    className='ml-4'
+                >Page not found</p>
                 <Link
                     className="font-bold border-l-2 border-l-green-500 mx-2 px-2 hover:underline cursor-pointer hover:text-blue-400 transition-all"
                     href={'/'}>
