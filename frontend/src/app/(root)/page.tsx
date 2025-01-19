@@ -19,7 +19,7 @@ const Home = () => {
             Get Started
           </Link>
           <Link
-            href={'/user-guide'}
+            href={'/docs'}
             className="bg-gray-200 text-gray-800 px-6 py-3 rounded-md font-bold hover:bg-gray-500 hover:text-white transition-all">
             Learn More
           </Link>
