@@ -39,8 +39,7 @@ const useShortenUrl = () => {
     setError(null);
 
     try {
-      const apiRoute = `${process.env.NEXT_PUBLIC_API}/shorten`;
-      const response = await fetch(apiRoute as string, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/shorten`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

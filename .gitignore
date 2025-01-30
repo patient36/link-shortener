@@ -103,8 +103,14 @@ public
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+
 # Docker related files
-.dockerignore
-docker-compose.yml
-Dockerfile.backend
 Dockerfile.frontend
+Dockerfile.backend
+docker-compose.yml
+.dockerignore
+app-config.yml
+backend-deployment.yml
+backend-service.yml
+frontend-deployment.yml
+frontend-service.yml
