@@ -66,7 +66,7 @@ urlRouter.post('/shorten', async (req, res) => {
         const url = new Url({ original, short, qrCode, alias })
 
         await url.save()
-        res.status(200).json({ url })
+        res.status(201).json({ url })
     } catch (error) {
         res.status(500).json({ error: error.message })
     }
